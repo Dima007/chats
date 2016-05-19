@@ -18,8 +18,8 @@ var ready = function() {
       if (event.keyCode == 13 && event.shiftKey == 0) {
         event.preventDefault();
 
-        message = chatboxtextarea.val();
-        message.replace(/^\s+|\s+$/g, "");
+        var message = chatboxtextarea.val();
+        message = $.trim(message);
 
         if (message != '') {
           $("#chat_form_" + chat_id).submit();
