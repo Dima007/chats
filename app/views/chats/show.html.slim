@@ -1,0 +1,16 @@
+.chatbox-head
+  .chatbox-title
+    h3
+      = @chat.name
+hr
+.chatbox-content.col-md-12
+  - if @messages.any?
+    = render @messages
+  - else
+    p 
+      em No messages
+hr
+.chatbox-input
+  = form_for([@chat, @message], remote: true, html: { id: "chat_form_#{@chat.id}", class: "chat_message" }) do |f|
+    = f.text_area :body, class: "chatboxtextarea form-control", "data-cid" => @chat.id, rows: 3, cols: 10
+= subscribe_to chat_path(@chat)

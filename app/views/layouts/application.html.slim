@@ -1,0 +1,25 @@
+doctype html
+html lang="en" 
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    meta charset="utf-8" /
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    meta content="" name="description"
+    meta content="" name="author"
+    meta content=("#{user_signed_in? ? current_user.id : ""}") name="user-id"
+    title Chats
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    = render 'layouts/nav'
+    .container
+      - flash.each do |name, msg|
+        div class="alert alert-#{ %w(notice success).include?(name) ? 'success' : 'danger'}"
+          a.close data-dismiss="alert" x
+          = msg.html_safe
+      = yield
+    audio#chatAudio
+      source src="/sounds/notification.mp3" type="audio/mpeg" 

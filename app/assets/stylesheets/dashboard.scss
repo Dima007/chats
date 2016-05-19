@@ -1,0 +1,78 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  padding-top: 70px;
+  background-color: #f1f2f4;
+  font-family: Open Sans,Helvetica Neue,sans-serif;
+}
+
+.row {
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-color: #ddd;
+}
+
+li.media {
+  position: relative;
+}
+
+li.media a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-decoration: none; /* No underlines on the link */
+  z-index: 10; /* Places the link above everything else in the div */
+  background-color: #FFF; /* Fix to make div clickable in IE */
+  opacity: 0; /* Fix to make div clickable in IE */
+  filter: alpha(opacity=1); /* Fix to make div clickable in IE */
+}
+
+.panel.panel-default {
+  margin-left: -15px;
+  margin-bottom: 0;
+}
+
+.panel-heading {
+  text-align: center;
+}
+
+#chat-list {
+  height: 500px; overflow-y: auto;
+}
+
+#chat-empty-page {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.chatbox-title h3 { 
+  text-align: center; 
+}
+
+.chatbox-content {
+  min-height: 360px;
+}
+
+.chat_message {
+  padding-left: 30px;
+  padding-right: 50px;
+}
+
+.chatbox-content {
+  overflow-y: auto;
+  height: 360px;
+}
+
+li.message {
+  margin-bottom: 5px;
+  // margin-top: 5px;
+  // background-color: rgba(97, 97, 97, 0.09);
+}
+
+.chatboxmessagecontent p {
+  word-break: break-word;
+}

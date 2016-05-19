@@ -1,0 +1,26 @@
+.row
+	.col-md-4.col-md-offset-4
+		.form
+			legend Login
+	    = form_for(:session, url: sessions_path) do |f|
+	    	.form-group
+		      = f.label :name
+		      = f.text_field :name, autofocus: true, class: "form-control"
+		    .form-group
+		      = f.label :password
+		      = f.password_field :password, autocomplete: "off", class: "form-control"
+
+	    	= f.submit "Login", class: "btn btn-primary"
+	    hr
+			p
+			  | New user? #{link_to "Sign up now", signup_path}
+			br
+			br
+			.well
+				p Login as default user:
+				p
+					| login: 
+					b guest
+					br
+					|password: 
+					b 123456

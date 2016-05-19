@@ -1,0 +1,14 @@
+li.message.list-unstyled
+  .col-md-2.avatar
+    / img.img-circle src="http://placehold.it/50x50"
+    p
+      strong
+        = message.user.name
+  .col-md-8.chatboxmessagecontent
+    p
+      = message.body
+  .col-md-2  
+    time datetime="#{message.created_at}" title="#{message.created_at.strftime("%d %b  %Y at %I:%M%p")}"
+      em
+        = message.created_at.strftime("%H:%M")
+  .clearfix

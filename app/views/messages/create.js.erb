@@ -1,0 +1,13 @@
+<% publish_to @path do %>
+  var id = "<%= @chat.id %>";
+  var chatbox = $("#chatbox_" + id + " .chatbox-content");
+  var user_id = "<%= @message.user_id %>";
+  var current_user = "<%= current_user.id %>";
+
+  chatbox.append("<%= j render(partial: @message) %>");
+  chatbox.scrollTop(chatbox[0].scrollHeight);
+
+  if (current_user != user_id) {
+    chatBox.notify();
+  }
+<% end %>

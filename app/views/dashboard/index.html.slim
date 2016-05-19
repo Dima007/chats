@@ -1,0 +1,28 @@
+.row
+  .col-md-4
+    .panel.panel-default
+      .panel-heading
+        b Your Chats
+      #chat-list
+        - if @chats.any?
+          ul.media-list
+            - @chats.each do |chat|
+              li.media
+                = image_tag("http://placehold.it/50x50", class: "media-object pull-left img-circle")
+                .media-body
+                  = link_to "", chat_path(chat), class: "chat", "data-cid" => chat.id
+                  h4.media-heading
+                    = chat.name
+                  p
+                    - if chat.messages.last.body
+                      = truncate(chat.messages.last.body, length: 45)
+                    - else
+                      em No messages
+        - else
+          p  You haven't any chats. Click to create a new
+  .col-md-8
+    #chat-empty-page
+      = image_tag "empty_icon.png"
+      p Please select a chat or
+      p
+        = link_to "create a new", new_chat_path
