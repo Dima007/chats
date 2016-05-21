@@ -50,3 +50,8 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller', '~> 0.7.2'
+  gem 'quiet_assets', '~> 1.1.0'
+end

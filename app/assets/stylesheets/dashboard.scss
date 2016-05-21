@@ -41,7 +41,8 @@ li.media a {
 }
 
 #chat-list {
-  height: 500px; overflow-y: auto;
+  height: 527px; 
+  overflow-y: auto;
 }
 
 #chat-empty-page {
@@ -58,8 +59,7 @@ li.media a {
 }
 
 .chat_message {
-  padding-left: 30px;
-  padding-right: 50px;
+  padding: 0 50px 10px 30px;
 }
 
 .chatbox-content {
@@ -75,4 +75,13 @@ li.message {
 
 .chatboxmessagecontent p {
   word-break: break-word;
+}
+
+li.active {
+  color: white;
+  background-color: rgb(114, 147, 182);
+}
+
+.unread {
+  background-color: rgba(114, 147, 182, 0.43);
 }

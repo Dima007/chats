@@ -5,4 +5,5 @@ class Message < ActiveRecord::Base
   acts_as_readable on: :created_at
 
   scope :with_body, -> { where("body NOT ?", nil) }
+  scope :other, -> (user_id) { where('user_id != ?', user_id) }
 end

@@ -9,18 +9,23 @@
             - @chats.each do |chat|
               li.media
                 = image_tag("http://placehold.it/50x50", class: "media-object pull-left img-circle")
-                .media-body
-                  = link_to "", chat_path(chat), class: "chat", "data-cid" => chat.id
+                = link_to "", chat_path(chat), class: "chat", "data-cid" => chat.id
+                .col-md-8
                   h4.media-heading
                     = chat.name
                   p
                     - if chat.messages.last.body
-                      = truncate(chat.messages.last.body, length: 45)
+                      = truncate(chat.messages.last.body, length: 25)
                     - else
                       em No messages
+                - if chat.messages.unread_by(@user).with_body.other(@user).any?
+                  .col-md-2
+                    h4
+                      |+ 
+                      = chat.messages.unread_by(@user).with_body.other(@user).count
         - else
           p  You haven't any chats. Click to create a new
-  .col-md-8
+  #chat-box.col-md-8
     #chat-empty-page
       = image_tag "empty_icon.png"
       p Please select a chat or

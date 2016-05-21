@@ -10,5 +10,8 @@ li.message.list-unstyled
   .col-md-2  
     time datetime="#{message.created_at}" title="#{message.created_at.strftime("%d %b  %Y at %I:%M%p")}"
       em
-        = message.created_at.strftime("%H:%M")
+        - if (message.created_at < Time.zone.now - 1.day)
+          = message.created_at.strftime("%d.%m.%Y")
+        - else
+          = message.created_at.strftime("%H:%M")
   .clearfix

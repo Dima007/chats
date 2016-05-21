@@ -2,9 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 ready = ->
-	#enable chosen js
-	$('.chosen-select').chosen
-		no_results_text: 'No results matched'
+  #enable chosen js
+  $('.chosen-select').chosen
+    no_results_text: 'No results matched'
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
